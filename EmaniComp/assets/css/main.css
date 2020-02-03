@@ -2649,12 +2649,13 @@ input, select, textarea {
 			width: 6.25em;
 		}
 
-		#header p.attribution {
+		p.attribution {
 			position: absolute;
 			bottom: -18px ;
 			left: 0;
 			text-align: left;
 			font-size: 12px;
+			padding-left: 10px;
 		}
 
 /* Footer */
