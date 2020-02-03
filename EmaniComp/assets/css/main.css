@@ -2042,6 +2042,7 @@ input, select, textarea {
 		border: 0;
 		display: inline-block;
 		position: relative;
+		
 	}
 
 		.image:before {
@@ -2063,6 +2064,7 @@ input, select, textarea {
 
 		.image.thumb {
 			text-align: center;
+			
 		}
 
 			.image.thumb:after {
@@ -2087,6 +2089,7 @@ input, select, textarea {
 				text-decoration: none;
 				top: 50%;
 				white-space: nowrap;
+				
 			}
 
 			.image.thumb:hover:after {
@@ -2101,6 +2104,7 @@ input, select, textarea {
 		.image img {
 			border-radius: 0.35em;
 			display: block;
+			
 		}
 
 		.image.left {
@@ -2127,10 +2131,12 @@ input, select, textarea {
 			display: block;
 			margin: 0 0 2em 0;
 			width: 100%;
+			
 		}
 
 			.image.fit img {
-				width: 100%;
+				width: 348px;
+		height: 204px;
 			}
 
 		.image.avatar {
