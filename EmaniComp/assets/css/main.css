@@ -3015,6 +3015,7 @@ input, select, textarea {
 			#header {
 				padding: 6em 3em 3em 3em;
 				width: 30%;
+				background-size: auto,  280%;
 			}
 
 				#header h1 {
@@ -3028,6 +3029,8 @@ input, select, textarea {
 				#header > .inner {
 					margin-bottom: 0;
 				}
+
+				
 
 		/* Footer */
 
