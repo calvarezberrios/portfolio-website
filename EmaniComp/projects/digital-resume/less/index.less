@@ -1,0 +1,436 @@
+@import url("../../../assets/css/fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+@import url('https://fonts.googleapis.com/css?family=Alice&display=swap');
+
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	line-height: 1.3;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+	box-sizing: border-box;
+	
+}
+
+html {
+	font-size: 10px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+	font-size: 16px;
+}
+
+// Variables
+@leftSideBackground: #CADFF4;
+@sectionTitleColor: #2C75BC;
+@leftSideWidth: 25%;
+
+//Mixing
+.flex(){
+	display:flex;
+}
+
+.defaultFont() {
+	font-family: 'Alice', serif;
+}
+
+.customBullet(@section) {
+		background: url("../images/@{section}-icon.png") no-repeat left top;
+		padding-left: 44px;
+		height: 36px;
+	
+}
+
+//Global Styles
+h1 {
+	font-size: 4rem;
+	font-weight: bolder;
+	line-height: 1.5;
+	.defaultFont();
+}
+
+h2 {
+	font-size: 2.7rem;
+	line-height: 1.5;
+	color: @sectionTitleColor;
+	font-style: italic;
+	//letter-spacing: -2px;
+	.defaultFont();
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 1.5;
+	color: @sectionTitleColor;
+	.defaultFont();
+}
+
+p{
+	line-height: 1.5;
+	.defaultFont();
+}
+
+a {
+	color: @sectionTitleColor;
+	.defaultFont();
+
+	&:hover {
+		color: rgb(129, 175, 221);
+	}
+}
+
+b {
+	font-weight: bold;
+}
+
+.button {
+	display: block;
+	width: 7rem;	
+	background: linear-gradient(@leftSideBackground, @sectionTitleColor);
+	color: @leftSideBackground;
+	border: 1px solid @sectionTitleColor;
+	text-align: center;
+	padding: .8rem 0;
+	border-radius: 10rem;
+	text-decoration: none;
+
+	&:hover {
+		background: @sectionTitleColor;
+		color: @leftSideBackground;
+	}
+}
+
+table {
+	border: 1px solid black;
+	width: 100%;
+
+	thead {
+		font-weight: bold;
+		color: @sectionTitleColor;
+
+		tr {
+			background: @leftSideBackground !important;
+		}
+	}
+	tr, th, td {
+		border: 1px solid black;
+		padding: 1.2rem;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	tr:nth-child(even) {
+		background: #ddd;
+	}
+}
+
+
+//Nested Styles
+#container {
+	.flex();
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+
+	#leftSide {
+		background: @leftSideBackground;
+		height: 100%;
+		width: @leftSideWidth;
+		padding: 3rem;
+		position: fixed;
+
+		img {
+			width: 50%;
+			border: 1.2rem solid black;
+		}
+
+		nav {
+			margin-top: 2rem;
+			.flex();
+			justify-content: space-between;
+		}
+
+		article {
+			margin-top: 3rem;
+		}
+	}
+
+	#content {
+		width: 60%;
+		position: relative;
+		margin-left: 25%;
+		padding: 3rem;
+		font-size: 1.8rem;
+
+		h3.skills {
+			.customBullet(skills);
+		}
+
+		h3.work {
+			.customBullet(work);
+		}
+
+		h3.achievements {
+			.customBullet(achievements);
+		}
+
+		div {
+			margin-bottom: 5rem;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			ul {
+				list-style: bullet;
+				list-style-type: disc;
+				list-style-position: inside;
+				margin-left: 4.6rem;
+			}
+
+			table {
+				margin-top: 1.5rem;
+			}
+		}		
+	}
+
+	
+}
+
+.icons {
+	.flex();
+	justify-content: space-around;
+}
+
+/* Icon */
+
+.icon {
+	text-decoration: none;
+	border-bottom: none;
+	position: relative;
+	font-size: 3rem;
+	
+
+	&:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		line-height: inherit;
+		text-transform: none;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 400;
+		
+	}
+
+	& > .label {
+		display: none;
+	}
+
+	&.solid:before {
+		font-weight: 900;
+	}
+
+	&.brands:before {
+		font-family: 'Font Awesome 5 Brands';
+	}
+}
+
+footer {
+	width: @leftSideWidth;
+	position: fixed;
+	bottom: 0;
+	padding-left: 1.5rem;
+
+	
+
+	p {
+		text-align: center;
+	}
+	
+}
+
+@media only screen and (max-width: 1440px) {
+	#container {
+		width: 144rem;
+		
+		#leftSide {
+			width: 36rem;
+		}
+
+		#content {
+			margin-left: 36rem;
+			width: 50%;
+		}
+
+	}
+
+	footer { 
+		width: 36rem;
+	}
+}
+
+@media only screen and (max-width: 1060px) {
+	#container {
+		width: 100%;
+		flex-direction: column;
+
+		#leftSide {
+			width: 100%;
+			background: none;
+			position: relative;
+
+			#intro {
+				.flex();
+				height: 20rem;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+				position: fixed;
+				background: @leftSideBackground;
+				left: 0;
+				top: 0;
+				width: 100%;
+				z-index: 1; 
+
+				img {
+					width: 15rem;
+					height: 12rem;
+				}
+
+				
+			}
+			.text-container {
+				padding-top: 15rem;
+				font-size: 1.8rem;
+			}
+		}
+
+		#content {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		
+	}
+
+	footer {
+		width: 100%;
+		position: relative;
+		//margin-top: 50rem;
+	}
+
+
+}
+
+@media only screen and (max-width: 800px) {
+	#container {
+		#leftSide {
+			h1, h2 {
+				font-size: 4vw;
+			}
+			.text-container {
+				font-size: 1.5rem;
+			}
+		}
+
+		#content {
+			font-size: 1.5rem;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+	#container, #leftSide, #content, footer {
+		width: 100%;
+		
+		h3 {
+			font-size: 3.8vw;
+		}
+		
+		p, address, li, table {
+			font-size: 3.4vw;
+		}	
+	}
+
+	#container #leftSide {
+		padding: 0;
+
+		#intro {
+			position: relative;
+			flex-direction: column;
+			
+			img {
+				width: 8rem;
+				height: 6rem;
+				border: 2px solid black;
+			}
+
+			div {
+				width: 80%;
+				text-align: center;
+			}
+	
+		}
+
+		.text-container {
+			padding: 3rem;
+			padding-top: 0;
+		}
+	}
+}
