@@ -2037,6 +2037,11 @@ input, select, textarea {
 
 /* Image */
 
+	.pic img {
+		width: 100% !important;
+		height: 749px;
+	}
+
 	.image {
 		border-radius: 0.35em;
 		border: 0;
@@ -2104,7 +2109,6 @@ input, select, textarea {
 		.image img {
 			border-radius: 0.35em;
 			display: block;
-			
 		}
 
 		.image.left {
@@ -2132,10 +2136,12 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 			width: 100%;
 			
+			
 		}
 
 			.image.fit img {
 				width: 100%;
+				height: 350px;
 			}
 
 		.image.avatar {
@@ -2792,6 +2798,7 @@ input, select, textarea {
 		box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
 		overflow: hidden;
 		padding-bottom: 3em;
+		max-width: 515px !important;
 	}
 
 		.poptrox-popup .loader {
